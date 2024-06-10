@@ -14,14 +14,14 @@ datasource db {
 }
 
 model Product {
-  id        String   @id @default(cuid())
-  name      String
-  color     String
-  category  Category
-  price     Int
-  isDeleted Boolean  @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          String   @id @default(cuid())
+  productName String
+  color       String
+  category    Category
+  price       String
+  isDeleted   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 enum Category {
