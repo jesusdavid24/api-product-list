@@ -5,6 +5,14 @@ const prisma = new PrismaClient();
 
 export async function getAllProduct() {
   const products = await prisma.product.findMany({
+    select: {
+      id: true,
+      productName: true,
+      color: true,
+      category: true,
+      price: true,
+      isDeleted: false
+    },
     where: {
       isDeleted: false
     }

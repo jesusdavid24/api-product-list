@@ -13,8 +13,9 @@ export async function getProducts(req: Request, res: Response) {
   try {
     const products = await getAllProduct();
     return res.send(products);
-  } catch (error) {
-    
+  } catch (exception: unknown) {
+    const message = errorHandler(exception);
+    return res.status(400).send({ message });
   }
 }
 
